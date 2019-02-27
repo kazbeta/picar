@@ -22,16 +22,16 @@ def main():
 	print "*                                          *"
 	print "*           SunFounder TB6612              *"
 	print "*                                          *"
-	print "*          Connect MA to BCM17             *"
-	print "*          Connect MB to BCM18             *"
-	print "*         Connect PWMA to BCM27            *"
-	print "*         Connect PWMB to BCM22            *"
+	print "*          Connect MA to BCM17 -> 20            *"
+	print "*          Connect MB to BCM18 -> 16           *"
+	print "*         Connect PWMA to BCM27 -> 12          *"
+	print "*         Connect PWMB to BCM22 -> 26          *"
 	print "*                                          *"
 	print "********************************************"
 	GPIO.setmode(GPIO.BCM)
-	GPIO.setup((27, 22), GPIO.OUT)
-	a = GPIO.PWM(27, 60)
-	b = GPIO.PWM(22, 60)
+	GPIO.setup((12, 26), GPIO.OUT)
+	a = GPIO.PWM(12, 60)
+	b = GPIO.PWM(26, 60)
 	a.start(0)
 	b.start(0)
 
@@ -41,8 +41,8 @@ def main():
 	def b_speed(value):
 		b.ChangeDutyCycle(value)
 
-	motorA = TB6612.Motor(17)
-	motorB = TB6612.Motor(18)
+	motorA = TB6612.Motor(20)
+	motorB = TB6612.Motor(16)
 	motorA.debug = True
 	motorB.debug = True
 	motorA.pwm = a_speed
