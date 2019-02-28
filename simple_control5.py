@@ -75,27 +75,27 @@ def main():
     if k=='\x1b[A':
         print("forward")
         motorA.forward()
-        motorA.speed(100)
+        motorA.speed =100
         motor.forward()
-        motorB.speed(100)
+        motorB.speed =100
     elif k=='\x1b[B':
         print("backward")
         motorA.backward()
-        motorA.speed(100)
+        motorA.speed = 100
         motor.backward()
-        motorB.speed(100)
+        motorB.speed = 100
     elif k=='\x1b[C':
         print("right")
         motorA.backward()
-        motorA.speed(100)
+        motorA.speed = 100
         motor.forward()
-        motorB.speed(100)
+        motorB.speed = 100
     elif k=='\x1b[D':
         print("left")
         motorA.forward()
-        motorA.speed(100)
+        motorA.speed = 100
         motor.backward()
-        motorB.speed(100)
+        motorB.speed = 100
 #    elif k==',':
 #        print("<")
 #    elif k=='.':
