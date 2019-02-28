@@ -219,8 +219,8 @@ def test():
     
     motorA = TB6612.Motor(20)
     motorB = TB6612.Motor(16)
-    motorA.debug = True
-    motorB.debug = True
+    #    motorA.debug = True
+    #    motorB.debug = True
     motorA.pwm = a_speed
     motorB.pwm = b_speed
 
@@ -240,7 +240,7 @@ def test():
         motorB.backward()
         motorB.speed = 100
 
-    elif k=='\x1b[C':
+    elif inkey=='\x1b[C':
         print("right")
 #        s1.write(0)
         motorA.forward()
@@ -248,7 +248,7 @@ def test():
         motorB.backward()
         motorB.speed = 100
 
-    elif k=='\x1b[D':
+    elif inkey=='\x1b[D':
         print("left")
 #        s1.write(180)
         motorA.backward()
@@ -260,11 +260,11 @@ def test():
 #--------------------#
 
 if __name__ == '__main__':
+    test()
     import sys
 #    if len(sys.argv) == 2:
 #        if sys.argv[1] == "install":
 #            install()
 #    else:
-    test()
-    except KeyboardInterrupt()
+#    except KeyboardInterrupt()
 
