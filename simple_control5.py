@@ -36,18 +36,18 @@ class _Getch:
 #            print("not an arrow key!")
 
 def main():
-    import time
-    
-    print "********************************************"
-    print "*                                          *"
-    print "*           SunFounder TB6612              *"
-    print "*                                          *"
-    print "*          Connect MA to BCM17 -> 20            *"
-    print "*          Connect MB to BCM18 -> 16           *"
-    print "*         Connect PWMA to BCM27 -> 12          *"
-    print "*         Connect PWMB to BCM22 -> 26          *"
-    print "*                                          *"
-    print "********************************************"
+#    import time
+#    
+#    print "********************************************"
+#    print "*                                          *"
+#    print "*           SunFounder TB6612              *"
+#    print "*                                          *"
+#    print "*          Connect MA to BCM17 -> 20            *"
+#    print "*          Connect MB to BCM18 -> 16           *"
+#    print "*         Connect PWMA to BCM27 -> 12          *"
+#    print "*         Connect PWMB to BCM22 -> 26          *"
+#    print "*                                          *"
+#    print "********************************************"
     GPIO.setmode(GPIO.BCM)
     GPIO.setup((12, 26), GPIO.OUT)
     a = GPIO.PWM(12, 60)
@@ -76,25 +76,25 @@ def main():
         print("forward")
         motorA.forward()
         motorA.speed =100
-        motor.forward()
+        motorB.forward()
         motorB.speed =100
     elif k=='\x1b[B':
         print("backward")
         motorA.backward()
         motorA.speed = 100
-        motor.backward()
+        motorB.backward()
         motorB.speed = 100
     elif k=='\x1b[C':
         print("right")
         motorA.backward()
         motorA.speed = 100
-        motor.forward()
+        motorB.forward()
         motorB.speed = 100
     elif k=='\x1b[D':
         print("left")
         motorA.forward()
         motorA.speed = 100
-        motor.backward()
+        motorB.backward()
         motorB.speed = 100
 #    elif k==',':
 #        print("<")
