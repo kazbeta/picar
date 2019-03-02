@@ -86,6 +86,7 @@ def test():
 
 #main part#
 if __name__ == '__main__':
-    test()
+    try:
+        test()
     except KeyboardInterrupt:
-    destroy()
+        destroy()
