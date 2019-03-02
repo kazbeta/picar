@@ -85,8 +85,9 @@ def test():
 #------------------------------#
 
 #main part#
-if __name__ == '__main__':
-    try:
+#if __name__ == '__main__':
+try:
+    while True:
         test()
-    except KeyboardInterrupt:
-        destroy()
+except KeyboardInterrupt:
+    destroy()
