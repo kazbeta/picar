@@ -90,4 +90,3 @@ while True:
     try:
         test()
     except KeyboardInterrupt:
-        destroy()
