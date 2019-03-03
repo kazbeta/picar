@@ -10,39 +10,7 @@ class _Getch:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
 
-#def get():
-#    inkey = _Getch()
-#    while(1):
-#        k=inkey()
-#        state = 0
-#        if k!='':break
-#    if k=='\x1b[A':
-#        state = 1
-##        print("up"),
-##        print(state)
-#    elif k=='\x1b[B':
-#        state = -1
-##        print("down")
-##        print(state)
-#    elif k=='\x1b[C':
-#        state = 2
-##        print("right")
-##        print(state)
-#    elif k=='\x1b[D':
-#        state = 3
-##        print("left")
-##        print(state)
-
-# def main():
-#     for i in range(0,20):
-#         get()
-
-# if __name__=='__main__':
-#     main()
-
-
 #----------------------------------------#
-
 
 import time
 from SunFounder_TB6612 import TB6612
@@ -87,16 +55,14 @@ def main():
 			if k!='':break
 			if k=='\x1b[A':
 				state = 1
-				return state
 			elif k=='\x1b[B':
 				state = -1
-				return state
 			elif k=='\x1b[C':
 				state = 2
-				return state
 			elif k=='\x1b[D':
 				state = 3
-				return state
+			else:
+				state = 0
 			
 		if state == 1:
 			print("forward")
@@ -115,20 +81,20 @@ def main():
 		elif state == 2:
 			print("right")
 			motorA.forward()
-			motorA.speed = 100
+			motorA.speed = 50
 			motorB.backward()
-			motorB.speed = 100
+			motorB.speed = 50
 			time.sleep(delay)
 		elif state == 3:
 			print("forward")
 			motorA.backward()
-			motorA.speed = 100
+			motorA.speed = 50
 			motorB.forward()
-			motorB.speed = 100
+			motorB.speed = 50
 			time.sleep(delay)
- 		else:
- 			motorA.stop()
- 			motorB.stop()
+#  		else:
+#  			motorA.stop()
+#  			motorB.stop()
 
 	
 
