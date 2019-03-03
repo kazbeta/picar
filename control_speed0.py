@@ -77,7 +77,7 @@ def main():
 	motorB.pwm = b_speed
 
 	delay = 1
-	delay1 = 0.2
+	delay1 = 0.4
 	state = 0
 
     	inkey = _Getch()
@@ -117,7 +117,7 @@ def main():
 		motorA.speed = 50
 		motorB.backward()
 		motorB.speed = 50
-		time.sleep(delay)
+		time.sleep(delay1)
 
 	elif state == 3:
 		print("forward")
@@ -125,7 +125,7 @@ def main():
 		motorA.speed = 50
 		motorB.forward()
 		motorB.speed = 50
-		time.sleep(delay)
+		time.sleep(delay1)
 
 	else:
 		motorA.stop()
