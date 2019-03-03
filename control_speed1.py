@@ -78,8 +78,9 @@ def main():
 
 	delay = 1
 	state = 0
-
-	def getstate():
+	
+	while 1:
+		
 		inkey = _Getch()
 		while 1:
 			k=inkey()
@@ -96,9 +97,7 @@ def main():
 			elif k=='\x1b[D':
 				state = 3
 				return state
-	
-	state = getstate()
-	while 1:
+			
 		if state == 1:
 			print("forward")
 			motorA.forward()
