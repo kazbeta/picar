@@ -87,18 +87,18 @@ def main():
 	while state == 2:
 		print("right")
 		motorA.forward()
-		motorA.speed = 50
+		motorA.speed = 30
 		motorB.backward()
-		motorB.speed = 50
+		motorB.speed = 30
 		time.sleep(delay)
 		k1=inkey()
  		if k1!='':break
 	while state == 3:
 		print("forward")
 		motorA.backward()
-		motorA.speed = 50
+		motorA.speed = 30
 		motorB.forward()
-		motorB.speed = 50
+		motorB.speed = 30
 		k1=inkey()
  		if k1!='':break
 	
@@ -111,5 +111,5 @@ while True:
 	try:
 		main()
 	except KeyboardInterrupt:
-		destroy()
 		break
+		destroy()
