@@ -56,7 +56,7 @@ def main():
     #Connect PWMA to BCM12
     #Connect PWMB to BCM26
 
-    GPIO.setmode(GPIO.BCM)
+	GPIO.setmode(GPIO.BCM)
 	GPIO.setup((12, 26), GPIO.OUT)
 	a = GPIO.PWM(12, 60)
 	b = GPIO.PWM(26, 60)
@@ -77,58 +77,58 @@ def main():
 	motorB.pwm = b_speed
 
 	delay = 3
-    state = 0
+	state = 0
 
-    inkey = _Getch()
-    while(1):
-        k=inkey()
-        state = 0
-        if k!='':break
-    if k=='\x1b[A':
-        state = 1
-    elif k=='\x1b[B':
-        state = -1
-    elif k=='\x1b[C':
-        state = 2
-    elif k=='\x1b[D':
-        state = 3
+    	inkey = _Getch()
+    	while(1):
+        	k=inkey()
+        	state = 0
+        	if k!='':break
+    	if k=='\x1b[A':
+        	state = 1
+    	elif k=='\x1b[B':
+		state = -1
+    	elif k=='\x1b[C':
+		state = 2
+   	elif k=='\x1b[D':
+		state = 3
 
 
-    if state == 1:
-        print("forward")
-        motorA.forward()
-        motorA.speed = 100
-        motorB.forward()
-        motorB.speed = 100
-#        time.sleep(delay)
+	if state == 1:
+		print("forward")
+		motorA.forward()
+		motorA.speed = 100
+		motorB.forward()
+		motorB.speed = 100
+#	        time.sleep(delay)
 
-    elif state == -1:
-        print("backward")
-        motorA.backward()
-        motorA.speed = 100
-        motorB.backward()
-        motorB.speed = 100
-#        time.sleep(delay)
+	elif state == -1:
+		print("backward")
+		motorA.backward()
+		motorA.speed = 100
+		motorB.backward()
+		motorB.speed = 100
+#        	time.sleep(delay)
 
-    elif state == 2:
-        print("right")
-        motorA.forward()
-        motorA.speed = 100
-        motorB.backward()
-        motorB.speed = 100
-#        time.sleep(delay)
+	elif state == 2:
+		print("right")
+		motorA.forward()
+		motorA.speed = 100
+		motorB.backward()
+		motorB.speed = 100
+#       	 time.sleep(delay)
 
-    elif state == 3:
-        print("forward")
-        motorA.backward()
-        motorA.speed = 100
-        motorB.forward()
-        motorB.speed = 100
-#        time.sleep(delay)
+	elif state == 3:
+		print("forward")
+		motorA.backward()
+		motorA.speed = 100
+		motorB.forward()
+		motorB.speed = 100
+#		time.sleep(delay)
 
-    else:
-        motorA.stop()
-        motorB.stop()
+	else:
+		motorA.stop()
+		motorB.stop()
 
 def destroy():
 	motorA.stop()
