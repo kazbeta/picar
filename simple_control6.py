@@ -92,7 +92,8 @@ def test():
 
 #main part#
 if __name__ == '__main__':
-    try:
-        test()
-    except KeyboardInterrupt:
-        break
+#    try:
+    test()
+#    except KeyboardInterrupt:
+#        break
+    GPIO.cleanup()
