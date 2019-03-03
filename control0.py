@@ -33,35 +33,35 @@ def main():
 	motorB.pwm = b_speed
 
 	delay = 0.05
-	s = get()
 	
 	while(1):
-		if s == 0
+		s = get()
+		if s = 0
 		#stop if nothing pressed#
 		    motorA.stop()
 		    motorB.stop()   
-		elif state == 1
+		elif state = 1
 		#going forward#
 		    motorA.forward()
 		    motorA.speed = 100
 		    motorB.forward()
 		    motorB.speed = 100
 
-		elif s == -1
+		elif s = -1
 		#going backward#
 		    motorA.backward()
 		    motorA.speed = 100
 		    motorB.backward()
 		    motorB.speed = 100
 
-		elif s == 2
+		elif s = 2
 		#rotate right#	
 		    motorA.forward()
 		    motorA.speed = 100
 		    motorB.backward()
 		    motorB.speed = 100
 
-		elif s == 3
+		elif s = 3
 		#rotate left#
 		    motorA.backward()
 		    motorA.speed = 100
@@ -92,16 +92,16 @@ def get():
     while(1):
 	k=inkey()
     if k=='\x1b[A':
-	state == 1
+	state = 1
         print("forward")
     elif k=='\x1b[B':
-	state == -1
+	state = -1
         print("backward")
     elif k=='\x1b[C':
-	state == 2
+	state = 2
 	print("right")
     elif k=='\x1b[D':
-	state == 3
+	state = 3
 	print("left")
     else:
         print("not an arrow key!")
