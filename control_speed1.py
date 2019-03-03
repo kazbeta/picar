@@ -64,17 +64,16 @@ def main():
 			state = 3
 		else:
 			state = 0
-
+		i = 0
 		while state == 1:
-			try:
-				print("forward")
-				motorA.forward()
-				motorA.speed = 100
-				motorB.forward()
-				motorB.speed = 100
-				time.sleep(delay)
-			except:
-				inkey !=''
+			print("forward")
+			motorA.forward()
+			motorA.speed = 100
+			motorB.forward()
+			motorB.speed = 100
+			time.sleep(delay)
+			i += 1
+			if i>3:
 				break
 		while state == -1:
 			print("backward")
@@ -83,7 +82,8 @@ def main():
 			motorB.backward()
 			motorB.speed = 100
 			time.sleep(delay)
-			if k!='':
+			i += 1
+			if i>3:
 				break
 		while state == 2:
 			print("right")
@@ -92,7 +92,8 @@ def main():
 			motorB.backward()
 			motorB.speed = 50
 			time.sleep(delay)
-			if k!='':
+			i += 1
+			if i>3:
 				break
 		while state == 3:
 			print("forward")
@@ -101,7 +102,8 @@ def main():
 			motorB.forward()
 			motorB.speed = 50
 			time.sleep(delay)
-			if k!='':
+			i += 1
+			if i>3:
 				break
 	#  		else:
 	#  			motorA.stop()
