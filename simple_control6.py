@@ -2,7 +2,6 @@ import sys,tty,termios
 import time
 from SunFounder_TB6612 import TB6612
 import RPi.GPIO as GPIO
-GPIO.setwarnings(False)
 
 
 #motor GPIO assignment#
@@ -33,6 +32,7 @@ class _Getch:
 
 #Control#
 def test():
+    GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup((12, 26), GPIO.OUT)
     a = GPIO.PWM(12, 60)
@@ -92,9 +92,10 @@ def test():
 #------------------------------#
 
 #main part#
-if __name__ == '__main__':
+while True:
+#if __name__ == '__main__':
 #    try:
     test()
 #    except KeyboardInterrupt:
 #        break
-    GPIO.cleanup()
+#    GPIO.cleanup()
