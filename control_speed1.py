@@ -47,56 +47,55 @@ def main():
 	delay = 0.1
 	state = 0
 	
+	inkey = _Getch()
 	while 1:
-		
-		inkey = _Getch()
-		while 1:
-			k=inkey()
-			if k!='':break
-			if k=='\x1b[A':
-				state = 1
-				print(state)
-			elif k=='\x1b[B':
-				state = -1
-				print(state)
-			elif k=='\x1b[C':
-				state = 2
-			elif k=='\x1b[D':
-				state = 3
-			else:
-				state = 0
-			
-		if state == 1:
+		k=inkey()
+		if k!='':break
+	while 1:
+		if k=='\x1b[A':
+			state = 1
+			print(state)
+		elif k=='\x1b[B':
+			state = -1
+			print(state)
+		elif k=='\x1b[C':
+			state = 2
+		elif k=='\x1b[D':
+			state = 3
+		else:
+			state = 0
+
+		while state == 1:
 			print("forward")
 			motorA.forward()
 			motorA.speed = 100
 			motorB.forward()
 			motorB.speed = 100
 			time.sleep(delay)
-		elif state == -1:
+		while state == -1:
 			print("backward")
 			motorA.backward()
 			motorA.speed = 100
 			motorB.backward()
 			motorB.speed = 100
 			time.sleep(delay)
-		elif state == 2:
+		while state == 2:
 			print("right")
 			motorA.forward()
 			motorA.speed = 50
 			motorB.backward()
 			motorB.speed = 50
 			time.sleep(delay)
-		elif state == 3:
+		while state == 3:
 			print("forward")
 			motorA.backward()
 			motorA.speed = 50
 			motorB.forward()
 			motorB.speed = 50
 			time.sleep(delay)
-#  		else:
-#  			motorA.stop()
-#  			motorB.stop()
+	#  		else:
+	#  			motorA.stop()
+	#  			motorB.stop()
 
 	
 
