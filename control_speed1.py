@@ -82,18 +82,16 @@ def main():
     	inkey = _Getch()
     	while 1:
         	k=inkey()
-        	state = 0
         	if k!='':break
-    	if k=='\x1b[A':
-        	state = 1
-    	elif k=='\x1b[B':
-		state = -1
-    	elif k=='\x1b[C':
-		state = 2
-   	elif k=='\x1b[D':
-		state = 3
-
-	while 1:
+		if k=='\x1b[A':
+			state = 1
+		elif k=='\x1b[B':
+			state = -1
+		elif k=='\x1b[C':
+			state = 2
+		elif k=='\x1b[D':
+			state = 3
+			
 		if state == 1:
 			print("forward")
 			motorA.forward()
