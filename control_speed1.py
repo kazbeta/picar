@@ -48,9 +48,9 @@ def main():
 	state = 0
 	
 	inkey = _Getch()
-	while 1:
-		k=inkey()
-		if k!='':break
+# 	while 1:
+# 		k=inkey()
+# 		if k!='':break
 	while 1:
 		if k=='\x1b[A':
 			state = 1
@@ -66,13 +66,15 @@ def main():
 			state = 0
 
 		while state == 1:
-			print("forward")
-			motorA.forward()
-			motorA.speed = 100
-			motorB.forward()
-			motorB.speed = 100
-			time.sleep(delay)
-			if k!='':
+			try:
+				print("forward")
+				motorA.forward()
+				motorA.speed = 100
+				motorB.forward()
+				motorB.speed = 100
+				time.sleep(delay)
+			except:
+				inkey !=''
 				break
 		while state == -1:
 			print("backward")
