@@ -64,6 +64,7 @@ def main():
 			state = 3
 		else:
 			state = 0
+			break
 	i = 0
 	while state == 1:
 		print("forward")
