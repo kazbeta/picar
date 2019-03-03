@@ -104,31 +104,31 @@ def main():
 			motorA.speed = 100
 			motorB.forward()
 			motorB.speed = 100
-	#			time.sleep(delay)
+			time.sleep(delay)
 		elif state == -1:
 			print("backward")
 			motorA.backward()
 			motorA.speed = 100
 			motorB.backward()
 			motorB.speed = 100
-	#			time.sleep(delay)
+			time.sleep(delay)
 		elif state == 2:
 			print("right")
 			motorA.forward()
 			motorA.speed = 100
 			motorB.backward()
 			motorB.speed = 100
-	#			time.sleep(delay)
+			time.sleep(delay)
 		elif state == 3:
 			print("forward")
 			motorA.backward()
 			motorA.speed = 100
 			motorB.forward()
 			motorB.speed = 100
-	#			time.sleep(delay)
-# 		else:
-# 			motorA.stop()
-# 			motorB.stop()
+			time.sleep(delay)
+ 		else:
+ 			motorA.stop()
+ 			motorB.stop()
 
 	
 
