@@ -134,7 +134,8 @@ def destroy():
 	motorA.stop()
 	motorB.stop()
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
+while True:
 	try:
 		main()
 	except KeyboardInterrupt:
