@@ -72,7 +72,7 @@ def main():
 		motorA.speed = 100
 		motorB.forward()
 		motorB.speed = 100
-		time.sleep(delay)
+#		time.sleep(delay)
 		if k!='':break
 # 		i += 1
 # 		if i > 3:
@@ -83,7 +83,7 @@ def main():
 		motorA.speed = 100
 		motorB.backward()
 		motorB.speed = 100
-		time.sleep(delay)
+#		time.sleep(delay)
 		if k!='':break
 # 		i += 1
 # 		if i > 3:
@@ -94,7 +94,7 @@ def main():
 		motorA.speed = 50
 		motorB.backward()
 		motorB.speed = 50
-		time.sleep(delay)
+#		time.sleep(delay)
 		if k!='':break
 # 		i += 1
 # 		if i > 3:
@@ -105,7 +105,7 @@ def main():
 		motorA.speed = 50
 		motorB.forward()
 		motorB.speed = 50
-		time.sleep(delay)
+#		time.sleep(delay)
 		if k!='':break
 # 		i += 1
 # 		if i > 3:
