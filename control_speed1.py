@@ -51,20 +51,20 @@ def main():
  	while 1:
  		k=inkey()
  		if k!='':break
-	while 1:
-		if k=='\x1b[A':
-			state = 1
-			print(state)
-		elif k=='\x1b[B':
-			state = -1
-			print(state)
-		elif k=='\x1b[C':
-			state = 2
-		elif k=='\x1b[D':
-			state = 3
-		else:
-			state = 0
-			break
+#	while 1:
+	if k=='\x1b[A':
+		state = 1
+		print(state)
+	elif k=='\x1b[B':
+		state = -1
+		print(state)
+	elif k=='\x1b[C':
+		state = 2
+	elif k=='\x1b[D':
+		state = 3
+	else:
+		state = 0
+#			break
 	i = 0
 	while state == 1:
 		print("forward")
