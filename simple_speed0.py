@@ -31,7 +31,7 @@ def main():
 	motorA.pwm = a_speed
 	motorB.pwm = b_speed
 
-	delay = 5
+	delay = 3
 
 	motorA.forward()
     	motorA.speed = 100
@@ -44,7 +44,19 @@ def main():
 	motorB.backward()
     	motorB.speed = 100
     	time.sleep(delay)
+	
+	motorA.forward()
+    	motorA.speed = 100
+    	motorB.backward()
+    	motorB.speed = 100
+    	time.sleep(delay)
 
+	motorA.backward()
+    	motorA.speed = 100
+    	motorB.forward()
+    	motorB.speed = 100
+    	time.sleep(delay)
+	
 def destroy():
 	motorA.stop()
 	motorB.stop()
