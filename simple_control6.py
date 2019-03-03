@@ -2,6 +2,7 @@ import sys,tty,termios
 import time
 from SunFounder_TB6612 import TB6612
 import RPi.GPIO as GPIO
+GPIO.setwarnings(False)
 
 
 #motor GPIO assignment#
