@@ -33,12 +33,12 @@ class _Getch:
 ##        print("left")
 ##        print(state)
 
-def main():
-    for i in range(0,20):
-        get()
+# def main():
+#     for i in range(0,20):
+#         get()
 
-if __name__=='__main__':
-    main()
+# if __name__=='__main__':
+#     main()
 
 
 #----------------------------------------#
