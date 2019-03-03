@@ -204,6 +204,7 @@ def test():
 #    s1.setup()
 #    s2.setup()
     import time
+    GPIO.setwarnings(False)
     
     GPIO.setmode(GPIO.BCM)
     GPIO.setup((12, 26), GPIO.OUT)
