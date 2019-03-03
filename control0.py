@@ -36,32 +36,32 @@ def main():
 	
 	while(1):
 		s = get()
-		if s = 0
+		if s == 0
 		#stop if nothing pressed#
 		    motorA.stop()
 		    motorB.stop()   
-		elif state = 1
+		elif s == 1
 		#going forward#
 		    motorA.forward()
 		    motorA.speed = 100
 		    motorB.forward()
 		    motorB.speed = 100
 
-		elif s = -1
+		elif s == -1
 		#going backward#
 		    motorA.backward()
 		    motorA.speed = 100
 		    motorB.backward()
 		    motorB.speed = 100
 
-		elif s = 2
+		elif s == 2
 		#rotate right#	
 		    motorA.forward()
 		    motorA.speed = 100
 		    motorB.backward()
 		    motorB.speed = 100
 
-		elif s = 3
+		elif s == 3
 		#rotate left#
 		    motorA.backward()
 		    motorA.speed = 100
