@@ -203,13 +203,16 @@ def test():
 #    s2 = Servo(2)
 #    s1.setup()
 #    s2.setup()
-
+    import time
+    
     GPIO.setmode(GPIO.BCM)
     GPIO.setup((12, 26), GPIO.OUT)
     a = GPIO.PWM(12, 60)
     b = GPIO.PWM(26, 60)
     a.start(0)
     b.start(0)
+    delay = 0.2
+    delay1 = 0.1
     
     def a_speed(value):
         a.ChangeDutyCycle(value)
@@ -232,6 +235,7 @@ def test():
         motorA.speed = 100
         motorB.forward()
         motorB.speed = 100
+        time.sleep(delay)
 
     elif inkey=='\x1b[B':
         print("backward")
@@ -239,24 +243,24 @@ def test():
         motorA.speed = 100
         motorB.backward()
         motorB.speed = 100
+        time.sleep(delay)
 
     elif inkey=='\x1b[C':
         print("right")
-#        s1.write(0)
         motorA.forward()
         motorA.speed = 100
         motorB.backward()
         motorB.speed = 100
+        time.sleep(delay1)
 
     elif inkey=='\x1b[D':
         print("left")
-#        s1.write(180)
         motorA.backward()
         motorA.speed = 100
         motorB.forward()
         motorB.speed = 100
-
-
+        time.sleep(delay1)
+        
 #--------------------#
 
 if __name__ == '__main__':
