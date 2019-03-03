@@ -11,7 +11,7 @@ def main():
     #Connect PWMA to BCM12
     #Connect PWMB to BCM26
 
-    GPIO.setmode(GPIO.BCM)
+    	GPIO.setmode(GPIO.BCM)
 	GPIO.setup((12, 26), GPIO.OUT)
 	a = GPIO.PWM(12, 60)
 	b = GPIO.PWM(26, 60)
@@ -34,16 +34,16 @@ def main():
 	delay = 5
 
 	motorA.forward()
-    motorA.speed = 100
-    motorB.forward()
-    motorB.speed = 100
-    time.sleep(delay)
+    	motorA.speed = 100
+    	motorB.forward()
+    	motorB.speed = 100
+    	time.sleep(delay)
 
 	motorA.backward()
-    motorA.speed = 100
+    	motorA.speed = 100
 	motorB.backward()
-    motorB.speed = 100
-    time.sleep(delay)
+    	motorB.speed = 100
+    	time.sleep(delay)
 
 def destroy():
 	motorA.stop()
