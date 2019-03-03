@@ -55,8 +55,10 @@ def main():
 			if k!='':break
 			if k=='\x1b[A':
 				state = 1
+				print(state)
 			elif k=='\x1b[B':
 				state = -1
+				print(state)
 			elif k=='\x1b[C':
 				state = 2
 			elif k=='\x1b[D':
