@@ -48,9 +48,9 @@ def main():
 	state = 0
 	
 	inkey = _Getch()
-# 	while 1:
-# 		k=inkey()
-# 		if k!='':break
+ 	while 1:
+ 		k=inkey()
+ 		if k!='':break
 	while 1:
 		if k=='\x1b[A':
 			state = 1
