@@ -80,7 +80,7 @@ def main():
 	state = 0
 
     	inkey = _Getch()
-    	while(1):
+    	while 1:
         	k=inkey()
         	state = 0
         	if k!='':break
@@ -93,42 +93,38 @@ def main():
    	elif k=='\x1b[D':
 		state = 3
 
-
-	if state == 1:
-		print("forward")
-		motorA.forward()
-		motorA.speed = 100
-		motorB.forward()
-		motorB.speed = 100
-	        time.sleep(delay)
-
-	elif state == -1:
-		print("backward")
-		motorA.backward()
-		motorA.speed = 100
-		motorB.backward()
-		motorB.speed = 100
-        	time.sleep(delay)
-
-	elif state == 2:
-		print("right")
-		motorA.forward()
-		motorA.speed = 100
-		motorB.backward()
-		motorB.speed = 100
-		time.sleep(delay)
-
-	elif state == 3:
-		print("forward")
-		motorA.backward()
-		motorA.speed = 100
-		motorB.forward()
-		motorB.speed = 100
-		time.sleep(delay)
-
-	else:
-		motorA.stop()
-		motorB.stop()
+	while 1:
+		if state == 1:
+			print("forward")
+			motorA.forward()
+			motorA.speed = 100
+			motorB.forward()
+			motorB.speed = 100
+#			time.sleep(delay)
+		elif state == -1:
+			print("backward")
+			motorA.backward()
+			motorA.speed = 100
+			motorB.backward()
+			motorB.speed = 100
+#			time.sleep(delay)
+		elif state == 2:
+			print("right")
+			motorA.forward()
+			motorA.speed = 100
+			motorB.backward()
+			motorB.speed = 100
+#			time.sleep(delay)
+		elif state == 3:
+			print("forward")
+			motorA.backward()
+			motorA.speed = 100
+			motorB.forward()
+			motorB.speed = 100
+#			time.sleep(delay)
+		else:
+			motorA.stop()
+			motorB.stop()
 
 def destroy():
 	motorA.stop()
