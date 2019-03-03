@@ -101,12 +101,7 @@ def main():
 		motorB.speed = 50
 		k1=inkey()
  		if k1!='':break
-	#  		else:
-	#  			motorA.stop()
-	#  			motorB.stop()
-
 	
-
 def destroy():
 	motorA.stop()
 	motorB.stop()
@@ -117,3 +112,4 @@ while True:
 		main()
 	except KeyboardInterrupt:
 		destroy()
+		break
