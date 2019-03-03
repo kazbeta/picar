@@ -9,6 +9,39 @@ import RPi.GPIO as GPIO
 #Connect PWMA to BCM12
 #Connect PWMB to BCM26
 
+class _Getch:
+    def __call__(self):
+        fd = sys.stdin.fileno()
+        old_settings = termios.tcgetattr(fd)
+        try:
+            tty.setraw(sys.stdin.fileno())
+            ch = sys.stdin.read(3)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+        return ch
+
+def get():
+    inkey = _Getch()
+    state = 0
+    while(1):
+	k=inkey()
+    if k=='\x1b[A':
+	state = 1
+        print("forward")
+    elif k=='\x1b[B':
+	state = -1
+        print("backward")
+    elif k=='\x1b[C':
+	state = 2
+	print("right")
+    elif k=='\x1b[D':
+	state = 3
+	print("left")
+    else:
+        print("not an arrow key!")
+    return state
+	
+
 def main():
 	import time
 	GPIO.setwarnings(False)
@@ -75,38 +108,7 @@ def destroy():
 	motorA.stop()
 	motorB.stop()
 
-class _Getch:
-    def __call__(self):
-        fd = sys.stdin.fileno()
-        old_settings = termios.tcgetattr(fd)
-        try:
-            tty.setraw(sys.stdin.fileno())
-            ch = sys.stdin.read(3)
-        finally:
-            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-        return ch
 
-def get():
-    inkey = _Getch()
-    state = 0
-    while(1):
-	k=inkey()
-    if k=='\x1b[A':
-	state = 1
-        print("forward")
-    elif k=='\x1b[B':
-	state = -1
-        print("backward")
-    elif k=='\x1b[C':
-	state = 2
-	print("right")
-    elif k=='\x1b[D':
-	state = 3
-	print("left")
-    else:
-        print("not an arrow key!")
-    return state
-	
 if __name__ == '__main__':
 	try:
 		main()
