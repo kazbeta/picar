@@ -76,7 +76,7 @@ def main():
 	motorA.pwm = a_speed
 	motorB.pwm = b_speed
 
-	delay = 1
+	delay = 0.1
 	state = 0
 	
 	while 1:
@@ -126,9 +126,9 @@ def main():
 			motorB.forward()
 			motorB.speed = 100
 	#			time.sleep(delay)
-		else:
-			motorA.stop()
-			motorB.stop()
+# 		else:
+# 			motorA.stop()
+# 			motorB.stop()
 
 	
 
